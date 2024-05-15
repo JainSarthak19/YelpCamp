@@ -2,6 +2,9 @@ const cities = require('./cities');
 const mongoose = require('mongoose');
 const Campground = require('../models/campgrounds');
 const { descriptors, places } = require('./seedHelper');
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
 const dbUrl = process.env.DB_URL;
 
 
